@@ -19,7 +19,7 @@ class BottomNavigation extends StatelessWidget {
         BottomNavigationBarItem(
           icon: Icon(Icons.list, color: Colors.white),
           backgroundColor: Colors.green,
-          label: 'Mapa',
+          label: 'Lista',
 
         ),
         BottomNavigationBarItem(
