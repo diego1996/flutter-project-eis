@@ -16,6 +16,7 @@ class BottomNavigation extends StatelessWidget {
         BottomNavigationBarItem(
           icon: Icon(Icons.home, color: Colors.green),
           backgroundColor: Colors.green,
+
           label: 'Inicio',
         ),
         BottomNavigationBarItem(
