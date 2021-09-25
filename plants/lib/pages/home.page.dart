@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plants/widgets/bottom.navigation.widget.dart';
 import 'package:plants/widgets/navigation.drawer.widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -24,6 +25,7 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.green,
           title: const Text("Inicio"),
         ),
+        bottomNavigationBar: const BottomNavigation(),
         body: const Center(
           child: Text("Hola mundo"),
         ));
