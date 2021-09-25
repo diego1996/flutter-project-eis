@@ -35,7 +35,13 @@ class Listado extends StatelessWidget{
                     Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: _listaBotonesFila9()),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: _listaBotonesFila9()),
 
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: _listaBotonesFila9()),
 
 
                   ],
@@ -54,7 +60,7 @@ class Listado extends StatelessWidget{
   _listaBotonesFila9() {
     return [
       ButtonPlant(
-        title: "Hombre",
+        title: "Planta",
         icon: "assets/planta.png",
         color: Colors.black12,
         method: () {
@@ -62,7 +68,7 @@ class Listado extends StatelessWidget{
         },
       ),
       ButtonPlant(
-        title: "Hombre",
+        title: "Planta",
         icon: "assets/planta.png",
         color: Colors.black12,
         method: () {
@@ -70,7 +76,7 @@ class Listado extends StatelessWidget{
         },
       ),
       ButtonPlant(
-        title: "Hombre",
+        title: "Planta",
         icon: "assets/planta.png",
         color: Colors.black12,
         method: () {
