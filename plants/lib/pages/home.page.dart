@@ -24,19 +24,21 @@ class _HomePageState extends State<HomePage> {
     futurePlants = plantsProvider.getAllPlants(page: 1);
     super.initState();
   }
+
   @override
-  int indexTap=0;
-  final List<Widget> widgetsChildren=[
+  int indexTap = 0;
+  final List<Widget> widgetsChildren = [
     Principal(),
     Listado(),
     MapPage(),
   ];
-  void onTapTapped(int index ){
-    setState((){
-      indexTap= index;
-    }
-    );
+
+  void onTapTapped(int index) {
+    setState(() {
+      indexTap = index;
+    });
   }
+
   Widget build(BuildContext context) {
     return FutureBuilder(
         future: futurePlants,
@@ -58,12 +60,12 @@ class _HomePageState extends State<HomePage> {
               title: const Text("Planta Biodiversa"),
             ),
             bottomNavigationBar: Theme(
-              data:  Theme.of(context).copyWith(
+              data: Theme.of(context).copyWith(
                 canvasColor: Colors.white,
                 primaryColor: Colors.purple,
               ),
               child: BottomNavigationBar(
-                  onTap:onTapTapped,
+                  onTap: onTapTapped,
                   currentIndex: indexTap,
                   items: const [
                     BottomNavigationBarItem(
@@ -78,14 +80,10 @@ class _HomePageState extends State<HomePage> {
                       icon: Icon(Icons.map),
                       label: "mapa",
                     ),
-
-
-                  ]
-              ),
+                  ]),
             ),
             body: widgetsChildren[indexTap],
           );
-
         });
   }
 }

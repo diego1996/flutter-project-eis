@@ -7,7 +7,11 @@ class ButtonPlant extends StatelessWidget {
   final dynamic method;
 
   const ButtonPlant(
-      {Key? key, required this.title, required this.icon, required this.color, required this.method})
+      {Key? key,
+      required this.title,
+      required this.icon,
+      required this.color,
+      required this.method})
       : super(key: key);
 
   @override
