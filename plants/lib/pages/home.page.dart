@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:plants/models/plant.model.dart';
 import 'package:plants/pages/list.page.dart';
 import 'package:plants/pages/main.page.dart';
-import 'package:plants/pages/map.page.dart';
 import 'package:plants/providers/plants.provider.dart';
-import 'package:plants/widgets/bottom.navigation.widget.dart';
+import 'package:plants/widgets/map.widget.dart';
 import 'package:plants/widgets/navigation.drawer.widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -25,13 +24,20 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-  @override
   int indexTap = 0;
-  final List<Widget> widgetsChildren = [
-    Principal(),
-    Listado(),
-    MapPage(),
-  ];
+
+  Widget bodyNavigation(List<Plant> plants) {
+    switch(indexTap) {
+      case 0:
+        return Principal();
+      case 1:
+        return Listado();
+      case 2:
+        return MapWidget(plants: plants);
+      default:
+        return Container();
+    }
+  }
 
   void onTapTapped(int index) {
     setState(() {
@@ -82,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ]),
             ),
-            body: widgetsChildren[indexTap],
+            body: bodyNavigation(listPlants),
           );
         });
   }
