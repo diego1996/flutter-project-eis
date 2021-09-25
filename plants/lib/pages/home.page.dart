@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plants/widgets/bottom.navigation.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -22,6 +23,7 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.green,
           title: const Text("Inicio"),
         ),
+        bottomNavigationBar: const BottomNavigation(),
         body: Center(
           child: Container(
             child: const Text("Hola mundo"),

@@ -16,7 +16,7 @@ class SplashPage extends StatelessWidget {
       image: Image.asset('assets/planta.png'),
       loadingText: const Text("Cargando"),
       photoSize: 100.0,
-      loaderColor: Colors.blue,
+      loaderColor: Colors.green,
     );
   }
 }
