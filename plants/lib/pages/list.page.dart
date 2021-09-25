@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:plants/pages/detail.page.dart';
+import 'package:plants/pages/main.page.dart';
 import 'package:plants/widgets/button.list.widget.dart';
 
 class Listado extends StatelessWidget {
@@ -10,13 +12,50 @@ class Listado extends StatelessWidget {
         ListView(
           children: <Widget>[
             Container(
-              decoration: new BoxDecoration(color: Colors.blueGrey),
+              decoration: new BoxDecoration(color: Colors.white),
               margin: const EdgeInsets.only(),
               child: Column(
                 children: [
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: _listaBotonesFila9()),
+                      children: [
+                        ButtonPlant(
+                          title: "Planta",
+                          icon: "assets/planta.png",
+                          color: Colors.black12,
+                          method: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => DetailPlant()),
+                            );
+                          },
+                        ),
+                        ButtonPlant(
+                          title: "Planta",
+                          icon: "assets/planta.png",
+                          color: Colors.black12,
+                          method: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Principal()),
+                            );
+                          },
+                        ),
+                        ButtonPlant(
+                          title: "Planta",
+                          icon: "assets/planta.png",
+                          color: Colors.black12,
+                          method: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Principal()),
+                            );
+
+
+                          },
+                        ),
+                      ]
+                  ),
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: _listaBotonesFila9()),
@@ -61,7 +100,10 @@ class Listado extends StatelessWidget {
         title: "Planta",
         icon: "assets/planta.png",
         color: Colors.black12,
-        method: () {},
+        method: () {
+
+
+        },
       ),
     ];
   }
