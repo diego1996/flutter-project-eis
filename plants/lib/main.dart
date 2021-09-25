@@ -1,5 +1,6 @@
+// @dart=2.13
 import 'package:flutter/material.dart';
-import 'package:plants/pages/home.page.dart';
+import 'package:plants/pages/splash.page.dart';
 
 void main() {
   runApp(const PlantaBiodiversaApp());
@@ -15,7 +16,7 @@ class PlantaBiodiversaApp extends StatelessWidget {
       title: 'Planta Biodiversa',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: const HomePage(),
+      home: const SplashPage(),
     );
   }
 }
