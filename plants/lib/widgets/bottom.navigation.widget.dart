@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:plants/models/plant.model.dart';
 
 class BottomNavigation extends StatelessWidget {
-  const BottomNavigation({Key? key}) : super(key: key);
+  final List<Plant> plants;
+  const BottomNavigation({Key? key, required this.plants}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
