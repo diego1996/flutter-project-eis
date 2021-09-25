@@ -4,6 +4,8 @@ import 'package:plants/pages/main.page.dart';
 import 'package:plants/widgets/button.list.widget.dart';
 
 class Listado extends StatelessWidget {
+  const Listado({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -26,7 +28,8 @@ class Listado extends StatelessWidget {
                           method: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => DetailPlant()),
+                              MaterialPageRoute(
+                                  builder: (context) => DetailPlant()),
                             );
                           },
                         ),
@@ -37,7 +40,8 @@ class Listado extends StatelessWidget {
                           method: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Principal()),
+                              MaterialPageRoute(
+                                  builder: (context) => Principal()),
                             );
                           },
                         ),
@@ -48,14 +52,12 @@ class Listado extends StatelessWidget {
                           method: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Principal()),
+                              MaterialPageRoute(
+                                  builder: (context) => Principal()),
                             );
-
-
                           },
                         ),
-                      ]
-                  ),
+                      ]),
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: _listaBotonesFila9()),
@@ -100,10 +102,7 @@ class Listado extends StatelessWidget {
         title: "Planta",
         icon: "assets/planta.png",
         color: Colors.black12,
-        method: () {
-
-
-        },
+        method: () {},
       ),
     ];
   }

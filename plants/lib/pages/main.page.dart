@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:plants/widgets/button.list.widget.dart';
 
 class Principal extends StatelessWidget {
+  const Principal({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -64,59 +65,55 @@ class Principal extends StatelessWidget {
                     const SizedBox(
                       height: 100,
                       width: 400,
-
-                        child: Text(
-                          'Planta Biodiversa es una aplicación, que nacio con la idea de '
-                              'poder mostrarle a las personas, la ubicación de plantas exoticas,'
-                              'y raras en su especie, '',Planta Biodiversa es una aplicación, que nacio con la idea de '
+                      child: Text(
+                        'Planta Biodiversa es una aplicación, que nacio con la idea de '
+                        'poder mostrarle a las personas, la ubicación de plantas exoticas,'
+                        'y raras en su especie, '
+                        ',Planta Biodiversa es una aplicación, que nacio con la idea de '
                         'poder mostrarle a las personas, la ubicación de plantas exoticas,'
                         'y raras en su especie.',
-
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontSize: 14,
-                              color: Colors.black),
-                        ),
-
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                            fontWeight: FontWeight.normal,
+                            fontSize: 14,
+                            color: Colors.black),
+                      ),
                     ),
                     const SizedBox(height: 1),
                     SizedBox(
                       height: 140,
                       width: 400,
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children: <Widget>[
-                            Container(
-                              width: 160.0,
-                              color: Colors.red,
-                            ),
-                            Container(
-                              width: 160.0,
-                              color: Colors.blue,
-                            ),
-                            Container(
-                              width: 160.0,
-                              color: Colors.green,
-                            ),
-                            Container(
-                              width: 160.0,
-                              color: Colors.yellow,
-                            ),
-                            Container(
-                              width: 160.0,
-                              color: Colors.orange,
-                            ),
-                          ],
-                        ),
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: <Widget>[
+                          Container(
+                            width: 160.0,
+                            color: Colors.red,
+                          ),
+                          Container(
+                            width: 160.0,
+                            color: Colors.blue,
+                          ),
+                          Container(
+                            width: 160.0,
+                            color: Colors.green,
+                          ),
+                          Container(
+                            width: 160.0,
+                            color: Colors.yellow,
+                          ),
+                          Container(
+                            width: 160.0,
+                            color: Colors.orange,
+                          ),
+                        ],
+                      ),
                     ),
                     SizedBox(height: 1),
                     SizedBox(
                       height: 40,
                       width: 400,
-
                       child: ElevatedButton(
-
                         onPressed: () {},
                         child: const Text(
                           'CREDITOS',
@@ -134,8 +131,6 @@ class Principal extends StatelessWidget {
                 )),
           ],
         ),
-
-
       ],
     );
   }
