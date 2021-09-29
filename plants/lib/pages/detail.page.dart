@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:plants/models/plant.model.dart';
+import 'package:plants/widgets/map.widget.dart';
 
 class DetailPlant extends StatelessWidget {
-  const DetailPlant({Key? key}) : super(key: key);
+  final Plant plant;
+
+  const DetailPlant({Key? key, required this.plant}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,46 +16,17 @@ class DetailPlant extends StatelessWidget {
           backgroundColor: Colors.green,
           title: const Text("Planta Biodiversa"),
         ),
-        body: Container(
-
-            //height: 250.0,
-            child: ListView(children: <Widget>[
+        body: ListView(children: <Widget>[
           Container(
-            color: Colors.white,
-            child: const Text(
-              "Datos",
-              style: TextStyle(
-                  //fontFamily: "Lato",
-                  color: Colors.black,
-                  fontSize: 38.0,
-                  fontWeight: FontWeight.w900),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          Container(
-              decoration: new BoxDecoration(color: Colors.blueGrey),
-              margin: EdgeInsets.only(),
+              decoration: const BoxDecoration(color: Colors.blueGrey),
+              margin: const EdgeInsets.only(),
               child: Column(
                 children: <Widget>[
-                  Center(
-                    child: Container(
-                      height: 160.0,
-                      width: 200.0,
-                      margin: const EdgeInsets.only(
-                        top: 30.0,
-                        left: 20.0,
-                        right: 20.0,
-                        bottom: 20,
-                      ),
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("assets/planta.png")),
-                        //borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      ),
-                    ),
-                  ),
-
+                  plant.image == ''
+                      ? const Image(image: AssetImage('assets/no-image.png'))
+                      : FadeInImage(
+                      placeholder: const AssetImage('assets/loading.gif'),
+                      image: NetworkImage(plant.image))
                   //CardImage("assets/img/medico.png"),
                 ],
               )),
@@ -62,40 +37,16 @@ class DetailPlant extends StatelessWidget {
               style: TextStyle(
                   //fontFamily: "Lato",
                   color: Colors.black,
-                  fontSize: 30.0,
+                  fontSize: 25.0,
                   fontWeight: FontWeight.w900),
               textAlign: TextAlign.left,
             ),
           ),
           Container(
             color: Colors.white,
-            child: const Text(
-              "Planta 1",
-              style: TextStyle(
-                  //fontFamily: "Lato",
-                  color: Colors.black,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.normal),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Container(
-            color: Colors.white,
-            child: const Text(
-              "Descripción",
-              style: TextStyle(
-                  //fontFamily: "Lato",
-                  color: Colors.black,
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.w900),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Container(
-            color: Colors.white,
-            child: const Text(
-              "lorempouenlo rempousen lorempousen lorempousen  ",
-              style: TextStyle(
+            child: Text(
+              plant.name,
+              style: const TextStyle(
                   //fontFamily: "Lato",
                   color: Colors.black,
                   fontSize: 20.0,
@@ -110,16 +61,16 @@ class DetailPlant extends StatelessWidget {
               style: TextStyle(
                   //fontFamily: "Lato",
                   color: Colors.black,
-                  fontSize: 30.0,
+                  fontSize: 25.0,
                   fontWeight: FontWeight.w900),
               textAlign: TextAlign.left,
             ),
           ),
           Container(
             color: Colors.white,
-            child: const Text(
-              "Categoría 1",
-              style: TextStyle(
+            child: Text(
+              plant.category.name,
+              style: const TextStyle(
                   //fontFamily: "Lato",
                   color: Colors.black,
                   fontSize: 20.0,
@@ -127,30 +78,6 @@ class DetailPlant extends StatelessWidget {
               textAlign: TextAlign.left,
             ),
           ),
-          Container(
-            color: Colors.white,
-            child: const Text(
-              "Lugar",
-              style: TextStyle(
-                  //fontFamily: "Lato",
-                  color: Colors.black,
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.w900),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Container(
-            color: Colors.white,
-            child: const Text(
-              "(-1.45, 7.42)",
-              style: TextStyle(
-                  //fontFamily: "Lato",
-                  color: Colors.black,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.normal),
-              textAlign: TextAlign.left,
-            ),
-          ),
-        ])));
+        ]));
   }
 }

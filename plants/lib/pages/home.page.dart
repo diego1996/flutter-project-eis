@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
       case 0:
         return Principal();
       case 1:
-        return Listado();
+        return ListViewWidget(plants: plants);
       case 2:
         return MapWidget(plants: plants);
       default:

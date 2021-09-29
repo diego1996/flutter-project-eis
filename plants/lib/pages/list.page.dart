@@ -1,109 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:plants/models/plant.model.dart';
 import 'package:plants/pages/detail.page.dart';
 import 'package:plants/pages/main.page.dart';
 import 'package:plants/widgets/button.list.widget.dart';
+import 'package:plants/widgets/card.widget.dart';
 
-class Listado extends StatelessWidget {
-  const Listado({Key? key}) : super(key: key);
+class ListViewWidget extends StatelessWidget {
+  final List<Plant> plants;
+
+  const ListViewWidget({Key? key, required this.plants}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Stack(
-      children: <Widget>[
-        ListView(
-          children: <Widget>[
-            Container(
-              decoration: new BoxDecoration(color: Colors.white),
-              margin: const EdgeInsets.only(),
-              child: Column(
-                children: [
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        ButtonPlant(
-                          title: "Planta",
-                          icon: "assets/planta.png",
-                          color: Colors.black12,
-                          method: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => DetailPlant()),
-                            );
-                          },
-                        ),
-                        ButtonPlant(
-                          title: "Planta",
-                          icon: "assets/planta.png",
-                          color: Colors.black12,
-                          method: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Principal()),
-                            );
-                          },
-                        ),
-                        ButtonPlant(
-                          title: "Planta",
-                          icon: "assets/planta.png",
-                          color: Colors.black12,
-                          method: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Principal()),
-                            );
-                          },
-                        ),
-                      ]),
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: _listaBotonesFila9()),
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: _listaBotonesFila9()),
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: _listaBotonesFila9()),
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: _listaBotonesFila9()),
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: _listaBotonesFila9()),
-                ],
-              ),
-            ),
-          ],
-        ),
+    List<CardWidget> listCards = [];
 
-        //DescriptionPlace('Quicksalud', 'Aqui en quicksalud queremos ser los mejores prestadores de servicio en el tema de medicina',5)
-      ],
+    for (var plant in plants) {
+      listCards.add(CardWidget(plant: plant));
+    }
+
+    return ListView(
+      children: listCards,
     );
+
   }
 
-  _listaBotonesFila9() {
-    return [
-      ButtonPlant(
-        title: "Planta",
-        icon: "assets/planta.png",
-        color: Colors.black12,
-        method: () {},
-      ),
-      ButtonPlant(
-        title: "Planta",
-        icon: "assets/planta.png",
-        color: Colors.black12,
-        method: () {},
-      ),
-      ButtonPlant(
-        title: "Planta",
-        icon: "assets/planta.png",
-        color: Colors.black12,
-        method: () {},
-      ),
-    ];
-  }
 }
