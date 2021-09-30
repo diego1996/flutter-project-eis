@@ -37,8 +37,8 @@ class MapWidget extends StatelessWidget {
           point: LatLng(coordinate.lat, coordinate.lng),
           builder: (ctx) => Container(
             child: IconButton(
-              // icon: Image.asset('assets/location-pin.png'),
-              icon: Image.network(plant.category.image),
+              icon: Image.asset('assets/location.png'),
+              // icon: Image.network(plant.category.image),
               onPressed: () {
                 print("planta: ${plant.id}");
               },
