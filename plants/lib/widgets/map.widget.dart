@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:plants/models/plant.model.dart';
+import 'package:plants/providers/cache.tile.provider.dart';
 
 class MapWidget extends StatelessWidget {
   final List<Plant> plants;
@@ -16,6 +17,7 @@ class MapWidget extends StatelessWidget {
       ),
       layers: [
         TileLayerOptions(
+          tileProvider: const CachedTileProvider(),
           urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
           subdomains: ['a', 'b', 'c'],
           attributionBuilder: null,

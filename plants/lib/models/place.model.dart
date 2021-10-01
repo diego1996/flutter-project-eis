@@ -17,4 +17,21 @@ class Place {
         lat: json["latitude"] ?? 0.0,
         lng: json["longitude"] ?? 0.0,
       );
+
+  Map toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'lat': lat,
+      'lng': lng,
+    };
+  }
+
+
+  @override
+  String toString() {
+    return '{ "id": $id, "name": "$name", "lat": $lat, "lng": $lng }';
+  }
+
+
 }

@@ -14,4 +14,18 @@ class Category {
         name: json["name"] ?? '',
         image: json["image"] ?? '',
       );
+
+  Map toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'image': image,
+    };
+  }
+
+  @override
+  String toString() {
+    return '{ "id": $id, "name": "$name", "image": "$image" }';
+  }
+
 }

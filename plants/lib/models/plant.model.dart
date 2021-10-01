@@ -1,4 +1,3 @@
-
 import 'package:plants/models/place.model.dart';
 
 import 'category.model.dart';
@@ -23,10 +22,26 @@ class Plant {
   factory Plant.fromJson(Map<String, dynamic> json) => Plant(
       id: json["id"],
       name: json["name"] ?? '',
-      scientificName: json["scientificName"] ?? '',
+      scientificName: json["scientific_name"] ?? '',
       image: json["image"] ?? '',
       category: Category.fromJson(json['category'] as Map<String, dynamic>),
       places: (json['place'] as List<dynamic>)
           .map((e) => Place.fromJson(e as Map<String, dynamic>))
           .toList());
+
+  Map toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'scientific_name': scientificName,
+      'image': image,
+      'category': category.toJson(),
+      'places': places.map((e) => e.toJson()).toList(),
+    };
+  }
+
+  @override
+  String toString() {
+    return '{ "id": $id, "name": "$name", "scientific_name": "$scientificName", "image": "$image", "category": $category, "places": $places }';
+  }
 }
